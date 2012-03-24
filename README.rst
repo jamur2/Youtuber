@@ -33,6 +33,10 @@ can build your own Python from source so you don't pollute your system Python
     $ python bootstrap.py
     $ bin/buildout
 
+
+Usage
+-----
+
 You can now fetch a Youtube channel, and all recent videos will be downloaded
 to the directory of your choice.  An Atom feed will also be dropped in the
 directory, which will link directly to the downloaded files.
