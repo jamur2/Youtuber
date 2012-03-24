@@ -14,7 +14,7 @@ You'll need:
 
 - Python
 - youtube-dl (http://rg3.github.com/youtube-dl/, or in Ubuntu:
-  `sudo apt-get install youtube-dl`
+  sudo apt-get install youtube-dl)
 - A webserver, like Apache (only if you don't want to host
   videos locally)
 - Linux or Mac (if somebody can make this work on Windows, be my guest)
@@ -56,7 +56,7 @@ This will download all the videos uploaded by testedcom in the past week into
 atom.xml in /tmp/youtube with links to all the downloaded videos (prefixed with
 http://www.example.com/).  If you're running this on a web server, you'll want
 this to be the web-reachable directory where the videos will be served from. If
-you're running this locally, you'll probably want a file:// prefix.
+you're running this locally, you'll probably want a file://... prefix.
 
 I personally run this as a cron job on a web server to fetch new videos every
 couple hours, and subscribe to the feed with my podcast client.  I also advise
