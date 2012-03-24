@@ -19,6 +19,10 @@ You'll need:
   videos locally)
 - Linux or Mac (if somebody can make this work on Windows, be my guest)
 
+
+Installation
+------------
+
 After downloading the source, build out the project (from the checkout
 directory).  Bootstrapping may need to be run with "sudo", depending on
 how you've installed Python.  If you're uncomfortable with that, you
