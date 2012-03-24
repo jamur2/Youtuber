@@ -34,7 +34,6 @@ feed_template = """<?xml version="1.0" encoding="utf-8"?>
         <content type="{{! entry['content'][0]['type'] }}" xml:lang="en">
             <![CDATA[{{! entry['content'][0].value }}]]>
         </content>
-        />
     </entry>
     %end
 
