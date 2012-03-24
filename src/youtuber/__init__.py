@@ -24,7 +24,7 @@ feed_template = """<?xml version="1.0" encoding="utf-8"?>
     %for entry in entries:
     <entry>
         <title>{{! entry['title'] }}</title>
-        <link rel="alternate" type="text/html" href="{{! entry['links'][0]['href'] }}" />
+        <link rel="enclosure" type="video/mpeg" href="{{! entry['links'][0]['href'] }}" />
         <id>{{! entry['id'] }}</id>
         <published>{{! entry['published'] }}</published>
         <updated>{{! entry['updated'] }}</updated>
@@ -34,7 +34,6 @@ feed_template = """<?xml version="1.0" encoding="utf-8"?>
         <content type="{{! entry['content'][0]['type'] }}" xml:lang="en">
             <![CDATA[{{! entry['content'][0].value }}]]>
         </content>
-        <enclosure url="{{! entry['links'][0]['href'] }}"
         />
     </entry>
     %end
