@@ -21,7 +21,10 @@ You'll need:
 
 After downloading the source, build out the project (from the checkout
 directory).  Bootstrapping may need to be run with "sudo", depending on
-how you've installed Python::
+how you've installed Python.  If you're uncomfortable with that, you
+can build your own Python from source so you don't pollute your system Python
+(which is what I do), or you can use
+`virtualenv <http://pypi.python.org/pypi/virtualenv>`_::
 
     $ python bootstrap.py
     $ bin/buildout
