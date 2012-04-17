@@ -18,24 +18,24 @@ res_720p = '22'
 
 feed_template = """<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{! d['title'] }}</title>
-    <id>{{! d['id'] }}</id>
-    <updated>{{! d['updated'] }}</updated>
-    %for entry in entries:
+    <title>$d.title</title>
+    <id>$d.id</id>
+    <updated>$d.updated</updated>
+    #for $entry in $entries
     <entry>
-        <title>{{! entry['title'] }}</title>
-        <link rel="enclosure" type="video/mpeg" href="{{! entry['links'][0]['href'] }}" />
-        <id>{{! entry['id'] }}</id>
-        <published>{{! entry['published'] }}</published>
-        <updated>{{! entry['updated'] }}</updated>
+        <title>$entry.title</title>
+        <link rel="enclosure" type="video/mpeg" href="$entry.links[0].href" />
+        <id>entry.id</id>
+        <published>$entry.published</published>
+        <updated>$entry.updated</updated>
         <author>
-            <name>{{! d['author'] }}</name>
+            <name>$d.author</name>
         </author>
-        <content type="{{! entry['content'][0]['type'] }}" xml:lang="en">
-            <![CDATA[{{! entry['content'][0].value }}]]>
+        <content type="$entry.content.[0].type" xml:lang="en">
+            <![CDATA[$entry.content.[0].value }}]]>
         </content>
     </entry>
-    %end
+    #end for
 
 </feed>
 """
@@ -86,7 +86,7 @@ def main():
                         datetime.timedelta(days=days_back)):
                     download_video(vid_id, dest_dir)
     fi = open(os.path.join(dest_dir, 'atom.xml'), 'w')
-    fi.write(bottle.template(
+    fi.write(bottle.cheetah_template(
         feed_template, {'d': contents.feed, 'entries': contents.entries}))
     fi.close()
 
