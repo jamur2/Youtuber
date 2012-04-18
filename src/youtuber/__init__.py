@@ -25,7 +25,7 @@ feed_template = """<?xml version="1.0" encoding="utf-8"?>
     <entry>
         <title>$entry.title</title>
         <link rel="enclosure" type="video/mpeg" href="$entry.links[0].href" />
-        <id>entry.id</id>
+        <id>$entry.id</id>
         <published>$entry.published</published>
         <updated>$entry.updated</updated>
         <author>
